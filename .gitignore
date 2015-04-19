@@ -57,5 +57,7 @@ docs/_build/
 target/
 
 
-mysql/data/
 .vagrant
+db.sqlite3
+.ropeproject/
+unitTestResults/
