@@ -1,4 +1,4 @@
-build:
+uild:
 	docker-compose build
 
 up:
@@ -16,9 +16,6 @@ collectstatic:
 bash:
 	docker-compose run --rm web /bin/bash
 
-mysqlshell:
-	docker-compose run --rm web mysql -uroot -p -hdb
-
 shell:
 	docker-compose run --rm web python manage.py shell
 
@@ -26,7 +23,7 @@ stop:
 	docker-compose stop
 
 pylint:
-	pylint 
+	docker-compose run --rm web pylint -E foods demo
 
 test: mkresultdir
 	docker-compose run --rm web py.test --junit-xml=unitTestResults/result.xml
