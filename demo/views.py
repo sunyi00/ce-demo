@@ -24,4 +24,5 @@ def foods(request):
     return JsonResponse({'foods': food_list})
 
 def food_detail(request, foodid):
-    return JsonResponse('')
+    food = Food.objects.get(id=foodid)
+    return JsonResponse({'id': food.id, 'name': food.name})
