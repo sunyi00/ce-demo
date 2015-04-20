@@ -11,7 +11,10 @@ from foods.models import Food
 
 
 def index(request):
-    color_flag = Flag.objects.get(name='color')
+    try:
+        color_flag = Flag.objects.get(name='color')
+    except Flag.DoesNotExist:
+        color_flag = None
     if color_flag:
         return HttpResponse(color_flag.status)
     else:
